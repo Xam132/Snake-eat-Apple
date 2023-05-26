@@ -50,7 +50,6 @@ while True:
         restart = False
         segments = [snake.copy()]
         len = 1
-    pygame.draw.rect(SURF,'red',food)
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
@@ -84,6 +83,7 @@ while True:
         restart = True
         dir = None
     draw_snake(segments)
+    pygame.draw.rect(SURF,'red',food)
     segments.append(snake.copy())
     del segments[0]
     draw_grid()
